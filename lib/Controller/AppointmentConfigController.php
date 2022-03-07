@@ -165,7 +165,8 @@ class AppointmentConfigController extends Controller {
 		?array $calendarFreeBusyUris = null,
 		?int $start = null,
 		?int $end = null,
-		?int $futureLimit = null): JsonResponse {
+		?int $futureLimit = null,
+		?bool $createTalkRoom = false): JsonResponse {
 		if ($this->userId === null) {
 			return JsonResponse::fail();
 		}
@@ -241,7 +242,8 @@ class AppointmentConfigController extends Controller {
 		?array $calendarFreeBusyUris = null,
 		?int $start = null,
 		?int $end = null,
-		?int $futureLimit = null): JsonResponse {
+		?int $futureLimit = null,
+		?bool $createTalkRoom = false): JsonResponse {
 		if ($this->userId === null) {
 			return JsonResponse::fail(null, Http::STATUS_NOT_FOUND);
 		}

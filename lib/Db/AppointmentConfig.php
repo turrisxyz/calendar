@@ -204,7 +204,8 @@ class AppointmentConfig extends Entity implements JsonSerializable {
 			'totalLength' => $this->getTotalLength(),
 			'timeBeforeNextSlot' => $this->getTimeBeforeNextSlot(),
 			'dailyMax' => $this->getDailyMax(),
-			'futureLimit' => $this->getFutureLimit()
+			'futureLimit' => $this->getFutureLimit(),
+			'createTalkRoom' => false,
 		];
 	}
 }
