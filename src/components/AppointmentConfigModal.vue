@@ -43,6 +43,11 @@
 							class="appointment-config-modal__form__row"
 							:label="t('calendar', 'Location')"
 							:value.sync="editing.location" />
+						<div class="appointment-config-modal__form__row">
+							<ActionCheckbox :checked.sync="editing.createTalkRoom" class="row--checkbox">
+								{{ t('calendar', 'Create a Talk room for every booked appointment') }}
+							</ActionCheckbox>
+						</div>
 						<TextArea
 							class="appointment-config-modal__form__row"
 							:label="t('calendar', 'Description')"
@@ -159,6 +164,7 @@ import Modal from '@nextcloud/vue/dist/Components/Modal'
 import TextInput from './AppointmentConfigModal/TextInput'
 import TextArea from './AppointmentConfigModal/TextArea'
 import AppointmentConfig from '../models/appointmentConfig'
+import ActionCheckbox from '@nextcloud/vue/dist/Components/ActionCheckbox'
 import { mapGetters } from 'vuex'
 import CalendarPicker from './Shared/CalendarPicker'
 import DurationInput from './AppointmentConfigModal/DurationInput'
@@ -172,6 +178,7 @@ import Confirmation from './AppointmentConfigModal/Confirmation'
 export default {
 	name: 'AppointmentConfigModal',
 	components: {
+	  ActionCheckbox,
 		CalendarAvailability,
 		CheckedDurationSelect,
 		CalendarPicker,
@@ -314,3 +321,10 @@ export default {
 	},
 }
 </script>
+
+<style scoped>
+.row--checkbox {
+		list-style: none;
+		margin-left: -14px;
+}
+</style>
