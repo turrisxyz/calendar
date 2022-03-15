@@ -194,7 +194,8 @@ class AppointmentConfigController extends Controller {
 				$calendarFreeBusyUris,
 				$start,
 				$end,
-				$futureLimit
+				$futureLimit,
+				$createTalkRoom
 			);
 			return JsonResponse::success($appointmentConfig);
 		} catch (ServiceException $e) {
@@ -277,6 +278,7 @@ class AppointmentConfigController extends Controller {
 		$appointmentConfig->setStart($start);
 		$appointmentConfig->setEnd($end);
 		$appointmentConfig->setFutureLimit($futureLimit);
+		$appointmentConfig->setCreateTalkRoom($createTalkRoom === true);
 
 		try {
 			$appointmentConfig = $this->appointmentConfigService->update($appointmentConfig);
