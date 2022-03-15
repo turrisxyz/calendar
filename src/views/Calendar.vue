@@ -219,7 +219,7 @@ export default {
 			timezone: loadState('calendar', 'timezone'),
 			showTasks: loadState('calendar', 'show_tasks'),
 			hideEventExport: loadState('calendar', 'hide_event_export'),
-			forceEventAlarmType: loadState('calendar', 'force_event_alarm_type', null),
+			forceEventAlarmType: loadState('calendar', 'force_event_alarm_type', false),
 		})
 		this.$store.dispatch('initializeCalendarJsConfig')
 
@@ -258,8 +258,8 @@ export default {
 				logger.info('User has no writable calendar, a new personal calendar will be created')
 				this.loadingCalendars = true
 				await this.$store.dispatch('appendCalendar', {
-					displayName: this.$t('calendars', 'Personal'),
-					color: uidToHexColor(this.$t('calendars', 'Personal')),
+					displayName: this.$t('calendar', 'Personal'),
+					color: uidToHexColor(this.$t('calendar', 'Personal')),
 					order: 0,
 				})
 			}
