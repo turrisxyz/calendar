@@ -28,6 +28,7 @@
 		</template>
 		<template #extra>
 			<Modal v-if="showModal"
+				size="large"
 				@close="showModal = false">
 				<div class="modal__content">
 					<h2>{{ t('calendar', 'Trash bin') }}</h2>
